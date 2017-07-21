@@ -14,6 +14,8 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+
+
 @Configuration
 @EnableTransactionManagement
 @ComponentScan({"com.harman.config"})
@@ -42,7 +44,7 @@ public class HibernateConfig {
 	private Properties hibernateProperties(){
 		Properties properties = new Properties();
 		properties.put("hibernate.dialect","org.hibernate.dialect.MySQLDialect");
-		properties.put("hibernate.show_sql", "true");
+		properties.put("hibernate.show_sql", "false");
 		properties.put("hibernate.format_sql", "false");
 		return properties;
 		

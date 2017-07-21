@@ -15,9 +15,9 @@ import com.harman.model.User;
 public class UserDaoImpl implements UserDao {
 
 	@Autowired
-	protected SessionFactory sessionFactory;
+	private SessionFactory sessionFactory;
 
-	public Session getSession() {
+	protected Session getSession() {
 		return sessionFactory.getCurrentSession();
 	}
 
@@ -33,6 +33,7 @@ public class UserDaoImpl implements UserDao {
 
 	public void deleteUser(int id) {
 		User user = (User) getSession().get(User.class, id); 
+		getSession().delete(user);
 	}
 
 	public User findByUser(int id) {
